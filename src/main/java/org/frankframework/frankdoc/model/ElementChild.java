@@ -95,10 +95,16 @@ public abstract class ElementChild {
 	private @Getter String description;
 	private @Getter String defaultValue;
 
+	/*
 	public static Predicate<ElementChild> IN_XSD = c ->
 		(! c.isExcluded())
 		&& (! c.isDeprecated())
 		&& (c.isDocumented() || (! c.isTechnicalOverride()));
+	*/
+
+	public static Predicate<ElementChild> IN_XSD = c ->
+		(! c.isExcluded())
+		&& (! c.isDeprecated());
 
 	public static Predicate<ElementChild> IN_COMPATIBILITY_XSD = c ->
 		(! c.isExcluded())
